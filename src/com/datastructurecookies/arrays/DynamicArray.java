@@ -48,44 +48,34 @@ public class DynamicArray {
 
     // return value at index
     public Object valueAt(int index) {
-        if (index >= capacity) {
+        if (index >= capacity)
             throw new IllegalArgumentException("index out of boundary");
-
-        }
         return arr[index];
 
     }
 
     // push value to end of array (append)
     public void pushBack(int value) {
-        if (size == capacity) {
-            resize();
-        }
+        if (size == capacity) resize();
         arr[size++] = value;
     }
 
     // insert value at index
     public void insertAt(int index, int value) {
-        if (index >= capacity || index < 0) {
+        if (index >= capacity || index < 0)
             throw new IllegalArgumentException("index out of bpundary");
-        }
-        if (size == capacity) {
-            resize();
-        }
-        for (int i = size - 1; i >= index; i--) {
+        if (size == capacity) resize();
+        for (int i = size - 1; i >= index; i--)
             arr[i + 1] = arr[i];
-        }
         arr[index] = value;
         size++;
     }
 
     public void removeAt(int index) {
-        if (index >= capacity || index < 0) {
+        if (index >= capacity || index < 0)
             throw new IllegalArgumentException("index out of bpundary");
-        }
-        for (int i = index + 1; i < size; i++) {
+        for (int i = index + 1; i < size; i++)
             arr[i - 1] = arr[i];
-        }
         size--;
 
     }
@@ -94,17 +84,13 @@ public class DynamicArray {
     public void resize() {
         this.capacity *= 2;
         Object[] tempArr = new Object[capacity];
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < size; i++)
             tempArr[i] = arr[i];
-        }
         arr = tempArr;
     }
 
     public void printArray() {
-        System.out.println(Arrays.stream(arr).toList());
-//        for (var i = 0; i < arraySize(); i++) {
-//            System.out.print(arr[i] + " ");
-//        }
+        System.out.println(Arrays.toString(arr));
     }
 
     public int arraySize() {

@@ -13,7 +13,7 @@ public class TwoNumberSum {
         System.out.println(Arrays.toString(getPair(arr, targetSum)));
         System.out.println(Arrays.toString(getPairTwoPointers(arr, targetSum)));
     }
-
+    // O(n) time | O(n) space
     private static int[] getPair(int[] arr, int targetSum) {
         HashMap<Integer, Boolean> nums = new HashMap<>();
         for (int num : arr) {
@@ -24,7 +24,7 @@ public class TwoNumberSum {
         }
         return new int[0];
     }
-
+    // O(n^2) time | O(1) space
     private static int[] getPairBruteForce(int[] arr, int targetSum) {
         for (int i = 0; i < arr.length - 1; i++) {
             int firstNum = arr[i];
@@ -38,6 +38,7 @@ public class TwoNumberSum {
         return new int[0];
     }
 
+    // O(nlog(n)) time | O(1) space
     private static int[] getPairTwoPointers(int[] arr, int targerSum) {
         Arrays.sort(arr);
         int left = 0;

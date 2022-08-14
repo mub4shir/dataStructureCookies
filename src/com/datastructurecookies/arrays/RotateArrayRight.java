@@ -75,10 +75,10 @@ public class RotateArrayRight {
     }
 
     /**
-     *  (1) brute-force method: O(n * k) time, O(1) space
+     * (1) brute-force method: O(n * k) time, O(1) space
      */
     public static List<Integer> bruteForceRotate(List<Integer> nums, int k) {
-        
+
         // for k times,
         for (int i = 0, size = nums.size(); i < k; i++) {
 
